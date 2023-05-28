@@ -1,0 +1,300 @@
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 26px;
+}
+.large-text {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 48px;
+  font-family: "Poppins", sans-serif;
+}
+/* test */
+.lar-med-text {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 38px;
+  font-family: "Poppins", sans-serif;
+}
+.first-med-text {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+.med-text {
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+.small-text {
+  font-size: 14px;
+  color: #2c2c2c;
+  line-height: 22px;
+}
+.extra-small-text {
+  font-size: 12px;
+  color: #2c2c2c;
+  line-height: 18px;
+}
+.outter-container {
+  display: flex;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.text-outside {
+  margin-bottom: 30px;
+}
+
+.header-div {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.loan-div {
+  flex: 1;
+
+  padding: 10px;
+}
+
+.input-div {
+  width: 80%;
+}
+
+.rate-div {
+  width: 60%;
+}
+
+.years-div {
+  width: 60%;
+}
+
+.input-div input {
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid #cccccc;
+  height: 33px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.input-dec {
+  display: flex;
+  border: 1px solid #cccccc;
+  width: 40px;
+  height: 35px;
+  border-radius: 10px 0px 0px 10px;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  background-color: #f6eded;
+}
+
+.sec-div {
+  display: flex;
+}
+
+.first-input {
+  display: flex;
+}
+
+.rate-div input {
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid #cccccc;
+  height: 33px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.years-div input {
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid #cccccc;
+  height: 33px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: #a49999;
+}
+
+.input-dec p {
+  text-align: center;
+  color: #a49999;
+}
+.sec-row {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.calcBtn {
+  padding: 10px;
+  display: flex;
+  width: 94%;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.calcBtn:hover {
+  opacity: 50%;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #a49999;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 12px;
+  text-align: justify;
+  line-height: 18px;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.information {
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 5px;
+}
+
+.tool-div {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.tool-div-2 {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+.result-div {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+.svg-div {
+  margin: 0 auto;
+  width: 100px;
+}
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.summary-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 26px;
+}
+
+.before-result {
+  display: inline;
+}
+.after-result {
+  display: none;
+}
+
+.after-result-desc {
+  padding-left: 10px;
+  padding-top: 30px;
+}
+.sub {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  text-align: center;
+}
+.circle-principal {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  border: 1px solid #230259;
+  background-color: #230259;
+}
+.circle-interest {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  border: 1px solid #9a64f2;
+  background-color: #9a64f2;
+}
+
+.monthly-value {
+  display: flex;
+  gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* progress bar */
+
+.progress-bar {
+  position: relative;
+  width: 90%; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  background-color: #9a64f2; /* Background color of the progress bar */
+  margin-bottom: 10px;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #230259; /* Blue color of the progress */
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+.label-blue {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.label-red {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  color: white;
+}
