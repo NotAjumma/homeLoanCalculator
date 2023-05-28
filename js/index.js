@@ -15,7 +15,6 @@ function validateForm() {
     alert("Your loan amount must be at least RM 100,000,000.");
     return false;
   }
-  // test
   if (y == "") {
     alert("Interest Rate must be filled out.");
     return false;
