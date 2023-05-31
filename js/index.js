@@ -179,3 +179,29 @@ $(document).ready(function () {
     this.value = this.value.replace(/[^0-9,]/g, ""); // Remove non-numeric characters except commas
   });
 });
+
+// Include the navigation using JavaScript
+fetch("navbar.html")
+  .then((response) => response.text())
+  .then((content) => {
+    document.getElementById("navigation-placeholder").innerHTML = content;
+  });
+
+function copyProfileLink() {
+  const linkText = document.getElementById("profileLink").getAttribute("value");
+
+  // Create a temporary element
+  const tempElement = document.createElement("textarea");
+  tempElement.value = linkText;
+  document.body.appendChild(tempElement);
+
+  // Select and copy the link
+  tempElement.select();
+  document.execCommand("copy");
+
+  // Clean up
+  document.body.removeChild(tempElement);
+
+  // Display a success message
+  alert("Link copied to clipboard: " + linkText);
+}

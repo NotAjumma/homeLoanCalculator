@@ -1,6 +1,10 @@
 body {
   font-family: "Roboto", sans-serif;
   line-height: 26px;
+  margin: 0px;
+}
+form {
+  margin-top: 100px;
 }
 .large-text {
   font-size: 30px;

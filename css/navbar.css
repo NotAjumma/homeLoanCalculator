@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 45px 10px 45px;
+  align-items: center;
+}
+.nav-line {
+  width: 100%;
+  height: 2.5px;
+  background-color: rgb(235, 231, 231);
+}
+.nav-text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  font-family: "Poppins", sans-serif;
+  color: #2c2c2c;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.right-nav {
+}
+nav {
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+
+  display: flex;
+  gap: 25px;
+}
+
+.ul {
+  align-items: center;
+}
