@@ -17,7 +17,7 @@ Footer {
 }
 
 .large-text {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 500;
   line-height: 35px;
   font-family: "Poppins", sans-serif;
@@ -27,7 +27,7 @@ Footer {
 }
 
 .medium-text {
-  margin-top: 15px;
+  margin-top: 13px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -57,4 +57,22 @@ Footer {
   width: 150px;
   margin: 15px;
   color: white;
+}
+
+.copyright {
+  color: white;
+  background-color: black;
+  padding: 15px;
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.copy-text {
+  color: lightgreen;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
 }
