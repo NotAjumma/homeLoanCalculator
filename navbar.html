@@ -24,19 +24,33 @@
   </head>
   <body>
     <script src="js/index.js"></script>
-    <div class="navbar nav-text">
-      <div class="left-nav">Akmal Adha</div>
-      <div class="right-nav">
-        <nav>
-          <ul class="ul">
-            <li><a href="index.html">My Profile</a></li>
-            <li><a href="loanCalculator.html">House Loan Calculator</a></li>
-          </ul>
-        </nav>
+    <header>
+      <div class="navbar nav-text">
+        <div class="left-nav">Akmal Adha</div>
+        <div class="right-nav">
+          <nav>
+            <ul class="ul" id="myDIV">
+              <li>
+                <a
+                  href="index.html"
+                  onclick="handleNavigationClick(event)"
+                  class="btn"
+                  >My Profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="loanCalculator.html"
+                  onclick="handleNavigationClick(event)"
+                  class="btn"
+                  >House Loan Calculator</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-    <div class="nav-line"></div>
-
-    <div id="calc-placeholder"></div>
+      <div class="nav-line"></div>
+    </header>
   </body>
 </html>

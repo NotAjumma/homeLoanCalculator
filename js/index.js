@@ -187,6 +187,13 @@ fetch("navbar.html")
     document.getElementById("navigation-placeholder").innerHTML = content;
   });
 
+// Include the footer using JavaScript
+fetch("footer.html")
+  .then((response) => response.text())
+  .then((content) => {
+    document.getElementById("footer-placeholder").innerHTML = content;
+  });
+
 function copyProfileLink() {
   const linkText = document.getElementById("profileLink").getAttribute("value");
 
