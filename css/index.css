@@ -82,6 +82,12 @@
   color: black;
 }
 
+.code:hover {
+  background-color: rgb(240, 240, 239);
+  color: black;
+  border: 1px solid white;
+}
+
 .about-bottom {
   display: flex;
   justify-content: space-between;
