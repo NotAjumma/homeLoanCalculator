@@ -181,14 +181,14 @@ $(document).ready(function () {
 });
 
 // Include the navigation using JavaScript
-fetch("navbar.html")
+fetch("components/navbar.html")
   .then((response) => response.text())
   .then((content) => {
     document.getElementById("navigation-placeholder").innerHTML = content;
   });
 
 // Include the footer using JavaScript
-fetch("footer.html")
+fetch("components/footer.html")
   .then((response) => response.text())
   .then((content) => {
     document.getElementById("footer-placeholder").innerHTML = content;
