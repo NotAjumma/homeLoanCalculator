@@ -1,12 +1,23 @@
 function validateForm() {
+  let u = document.forms["loanForm"]["input-monthly-income"].value;
+  let selectElement = document.getElementById("input-select");
+  let selectedIndex = selectElement.selectedIndex;
+  let houseType = selectElement.value;
+  let dateElement = document.getElementById("input-start-loan");
+  let dateValue = dateElement.value;
+  let w = document.forms["loanForm"]["input-age"].value;
+  let xx = document.forms["loanForm"]["input-start-loan"].value;
   let x = document.forms["loanForm"]["input-loan"].value;
   let y = document.forms["loanForm"]["input-rate"].value;
   let z = document.forms["loanForm"]["input-years"].value;
   loan = x.replace(/,/g, "");
+  monthlyIncome = u.replace(/,/g, "");
+
   if (loan == "") {
     alert("Loan Amount must be filled out.");
     return false;
   }
+
   if (loan < 50000) {
     alert("Your loan amount must be at least RM 50,000.");
     return false;
@@ -39,9 +50,40 @@ function validateForm() {
     alert("Your loan tenure cannot be more than 35 years.");
     return false;
   }
+  if (dateValue === "") {
+    alert("Please select a start loan date.");
+    return false;
+  }
+  if (w == "") {
+    alert("Age must be filled out.");
+    return false;
+  }
+  if (w < 18) {
+    alert("Your age must cannot be less than 18 Years old.");
+    return false;
+  }
+  if (w > 70) {
+    alert("Your age cannot be more than 70 Years old.");
+    return false;
+  }
+  if (selectedIndex === 0) {
+    alert("Please select a house type.");
+    return false;
+  }
+  if (monthlyIncome == "") {
+    alert("Monthly Income must be filled out.");
+    return false;
+  }
   if (loan != "" && y != "" && z != "") {
     const years = document.getElementById("input-years").value;
-
+    const additionalIncome = parseFloat(
+      document.getElementById("input-additional-income").value.replace(",", "")
+    );
+    const monthlyIncome2 = parseFloat(
+      document.getElementById("input-monthly-income").value.replace(",", "")
+    );
+    const age = parseFloat(document.getElementById("input-age").value);
+    const year = parseFloat(document.getElementById("input-years").value);
     const rateFloat = parseFloat(y);
     var monthlyInterest = rateFloat / 12 / 100;
     var totalPayments = years * 12;
@@ -56,12 +98,30 @@ function validateForm() {
     var totalInterest = parseFloat(
       monthlyPayment * totalPayments - loan
     ).toFixed(2);
+
+    var startLoan = new Date(dateValue);
+    var endLoan = new Date(startLoan);
+    endLoan.setFullYear(endLoan.getFullYear() + year);
+    var formattedEndLoan = endLoan.toDateString();
+    var formattedStartLoan = startLoan.toDateString();
+
+    var endAge = age + year;
+    var newAdditionalIncome = additionalIncome || 0;
+
+    var totalIncome = monthlyIncome2 + newAdditionalIncome;
+    var monthlyIncomeAfterRepayment = (totalIncome - monthlyPayment).toFixed(2);
+
     var monthlyPrincipal = parseFloat(loan / totalPayments).toFixed(2);
     var monthlyInterest = parseFloat(totalInterest / totalPayments).toFixed(2);
     document.getElementById("monthly-repayment").innerHTML = monthlyPayment;
     document.getElementById("principal-value").innerHTML = monthlyPrincipal;
     document.getElementById("interest-value").innerHTML = monthlyInterest;
-    // document.getElementById("total-interest").innerHTML = totalInterest;
+    document.getElementById("start-loan").innerHTML = formattedStartLoan;
+    document.getElementById("end-loan").innerHTML = formattedEndLoan;
+    document.getElementById("end-age").innerHTML = endAge;
+    document.getElementById("house-type").innerHTML = houseType;
+    document.getElementById("after-monthly-repayment").innerHTML =
+      monthlyIncomeAfterRepayment;
     document.querySelector(".before-result").style.display = "none";
     document.querySelector(".after-result").style.display = "inline";
 
@@ -161,7 +221,10 @@ function validateForm() {
     return false;
   }
 }
-
+document.addEventListener("DOMContentLoaded", function () {
+  var today = new Date().toISOString().split("T")[0];
+  document.getElementById("input-start-loan").setAttribute("min", today);
+});
 function formatNumber(input) {
   var value = input.value.replace(/,/g, ""); // Remove existing commas
   var formattedValue = addCommas(value); // Add commas
@@ -175,11 +238,17 @@ function addCommas(number) {
 
 // Only allow numeric input
 $(document).ready(function () {
-  $("#input-loan").on("input", function () {
-    this.value = this.value.replace(/[^0-9,]/g, ""); // Remove non-numeric characters except commas
-  });
+  $("#input-loan,#input-monthly-income,#input-additional-income").on(
+    "input",
+    function () {
+      this.value = this.value.replace(/[^0-9,]/g, ""); // Remove non-numeric characters except commas
+    }
+  );
 });
-
+function validateInput(input) {
+  // Remove any dots from the entered value
+  input.value = input.value.replace(".", "");
+}
 // Include the navigation using JavaScript
 fetch("components/navbar.html")
   .then((response) => response.text())

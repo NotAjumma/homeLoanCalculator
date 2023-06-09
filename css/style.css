@@ -34,6 +34,12 @@ form {
   color: #2c2c2c;
   line-height: 22px;
 }
+.small-bold-text {
+  font-size: 15px;
+  color: #2c2c2c;
+  font-weight: 600;
+  line-height: 22px;
+}
 .extra-small-text {
   font-size: 12px;
   color: #2c2c2c;
@@ -69,11 +75,23 @@ form {
 }
 
 .rate-div {
-  width: 60%;
+  width: 150px;
 }
 
 .years-div {
   width: 60%;
+}
+
+.input-date {
+  height: 35px !important;
+}
+
+.input-select {
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid #cccccc;
+  height: 37px;
+  padding-left: 15px;
+  width: 105%;
 }
 
 .input-div input {
@@ -98,6 +116,7 @@ form {
 
 .sec-div {
   display: flex;
+  width: 230px;
 }
 
 .first-input {
@@ -105,6 +124,14 @@ form {
 }
 
 .rate-div input {
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid #cccccc;
+  height: 33px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.date-div input {
   border-radius: 0px 10px 10px 0px;
   border: 1px solid #cccccc;
   height: 33px;
@@ -130,10 +157,10 @@ form {
 }
 .sec-row {
   display: flex;
-  margin-bottom: 30px;
 }
 
 .calcBtn {
+  margin-top: 45px;
   padding: 10px;
   display: flex;
   width: 94%;
@@ -196,6 +223,7 @@ form {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
+  margin-top: 15px;
 }
 .tool-div-2 {
   display: flex;
@@ -203,8 +231,12 @@ form {
   margin-top: 20px;
   align-items: center;
 }
+.date-div {
+  width: 60%;
+}
 .result-div {
   flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -300,4 +332,43 @@ form {
   right: 5px;
   transform: translateY(-50%);
   color: white;
+}
+
+select {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #a49999;
+  font-size: 13px;
+}
+
+select:hover {
+  border-color: black;
+}
+
+select:focus {
+  outline: none;
+  border-color: green;
+  color: black;
+  font-size: 16px;
+}
+.additional-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+
+.line {
+  height: 1;
+  border: 1px solid #9a64f2;
+  margin: 30px;
+}
+
+.must-fill {
+  color: red;
+  margin-left: 5px;
 }
